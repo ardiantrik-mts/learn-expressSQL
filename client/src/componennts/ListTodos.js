@@ -38,7 +38,10 @@ const ListTodos = () => {
             <table className="table table-striped mt-3 text-center">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Deadline</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                         
                     </tr>
@@ -50,7 +53,10 @@ const ListTodos = () => {
                     </tr> */}
                     {todos.map(todo => (
                         <tr>
+                            <td></td>
                             <td>{ todo.description }</td>
+                            <td>{ todo.deadline }</td>
+                            <td>{ todo.completed_at === null? "On Going" : "Completed"}</td>
                             <td>
                                 <EditTodo todo={todo} />{' '}
                                 <button className="btn btn-danger" onClick={() => deleteTodos(todo.todo_id)}>Delete</button>
